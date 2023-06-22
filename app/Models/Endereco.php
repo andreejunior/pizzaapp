@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Endereco extends Model
+{
+    use HasFactory, SoftDeletes;
+
+    protected $table = 'enderecos';
+    protected $primaryKey = 'id_endereco';
+    protected $dates = ['created_at','updated_at','deleted_at'];
+    // campos que podem ser visualizados/ manipulados fora da classe
+
+    protected $fillable = [
+        'endereco',
+        'numero',
+        'complemento',
+        'bairro',
+        'cidade',
+        'uf',
+        'cep',
+        'observacoes',
+    ];
+
+    /**
+     * --------------------------------------
+     * RELACIONAMENTOS
+     * --------------------------------------
+     */
+
+     //public function usuarios() :object {
+       // return $this->belongsTo(User::class,
+                                 //'id_cargo',
+                                // 'id_cargo');
+     //}
+}
